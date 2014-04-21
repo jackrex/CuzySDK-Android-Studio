@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="umupdateso">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CacheFoundation/libs/umupdateso.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SocialSDK_WeiXin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CacheFoundation/libs/SocialSDK_WeiXin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
