@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp"
+    >
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:text="XXXXXXXXXXXXXXXXX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:ellipsize="end"
+            android:textSize="25dp"
+            android:textColor="#848484"
+
+            />
+
+
+
+        <ImageView
+            android:layout_below="@+id/title"
+            android:id="@+id/shopimg"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+
+            />
+
+
+        <LinearLayout
+            android:layout_below="@+id/shopimg"
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="价格:$132"
+
+                    android:textColor="#ea6683"
+
+                    />
+
+                <TextView
+                    android:id="@+id/num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="4分钟前"
+                    android:layout_alignParentRight="true"
+
+                    android:textColor="#8ca9b5"
+                    />
+
+
+
+
+
+            </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+</LinearLayout>
+</LinearLayout>

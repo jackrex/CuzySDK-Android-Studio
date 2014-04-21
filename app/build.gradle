@@ -19,6 +19,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.android.support:support-v4:18.0.+'
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':application')
+    compile project(':UiLibs:XListView')
+    compile project(':cuzyandroid')
 }

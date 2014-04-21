@@ -8,7 +8,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CacheFoundation" />
+            <option value="$PROJECT_DIR$/UiLibs" />
+            <option value="$PROJECT_DIR$/UiLibs/Android-ViewPagerIndicator" />
+            <option value="$PROJECT_DIR$/UiLibs/XListView" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/application" />
+            <option value="$PROJECT_DIR$/cuzyandroid" />
+            <option value="$PROJECT_DIR$/library" />
           </set>
         </option>
       </GradleProjectSettings>

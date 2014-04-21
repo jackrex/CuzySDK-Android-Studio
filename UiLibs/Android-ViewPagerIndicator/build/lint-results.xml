@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 22.6.2">
+
+    <issue
+        id="InlinedApi"
+        severity="Warning"
+        message="Field requires API level 11 (current min is 8): android.R.attr#showDividers"
+        category="Correctness"
+        priority="6"
+        summary="Finds inlined fields that may or may not work on older platforms"
+        explanation="This check scans through all the Android API field references in the application and flags certain constants, such as static final integers and Strings, which were introduced in later versions. These will actually be copied into the class files rather than being referenced, which means that the value is available even when running on older devices. In some cases that&apos;s fine, and in other cases it can result in a runtime crash or incorrect behavior. It depends on the context, so consider the code carefully and device whether it&apos;s safe and can be suppressed or whether the code needs tbe guarded.
+
+If you really want to use this API and don&apos;t need to support older devices just set the `minSdkVersion` in your `AndroidManifest.xml` file.
+If your code is *deliberately* accessing newer APIs, and you have ensured (e.g. with conditional execution) that this code will only ever be called on a supported platform, then you can annotate your class or method with the `@TargetApi` annotation specifying the local minimum SDK to apply, such as `@TargetApi(11)`, such that this check considers 11 rather than your manifest file&apos;s minimum SDK as the required API level.
+"
+        errorLine1="        /* 1 */ android.R.attr.showDividers,"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="adt">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/src/com/viewpagerindicator/IcsLinearLayout.java"
+            line="20"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="InlinedApi"
+        severity="Warning"
+        message="Field requires API level 11 (current min is 8): android.R.attr#dividerPadding"
+        category="Correctness"
+        priority="6"
+        summary="Finds inlined fields that may or may not work on older platforms"
+        explanation="This check scans through all the Android API field references in the application and flags certain constants, such as static final integers and Strings, which were introduced in later versions. These will actually be copied into the class files rather than being referenced, which means that the value is available even when running on older devices. In some cases that&apos;s fine, and in other cases it can result in a runtime crash or incorrect behavior. It depends on the context, so consider the code carefully and device whether it&apos;s safe and can be suppressed or whether the code needs tbe guarded.
+
+If you really want to use this API and don&apos;t need to support older devices just set the `minSdkVersion` in your `AndroidManifest.xml` file.
+If your code is *deliberately* accessing newer APIs, and you have ensured (e.g. with conditional execution) that this code will only ever be called on a supported platform, then you can annotate your class or method with the `@TargetApi` annotation specifying the local minimum SDK to apply, such as `@TargetApi(11)`, such that this check considers 11 rather than your manifest file&apos;s minimum SDK as the required API level.
+"
+        errorLine1="        /* 2 */ android.R.attr.dividerPadding,"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="adt">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/src/com/viewpagerindicator/IcsLinearLayout.java"
+            line="21"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Checks that the manifest specifies a targetSdkVersion that is recent"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.
+
+To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        url="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        urls="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="        targetSdkVersion 18"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/build.gradle"
+            line="22"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:support-v4 than 18.0.+ is available: 19.1.0"
+        category="Correctness"
+        priority="4"
+        summary="Looks for old or obsolete Gradle library dependencies"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:support-v4:18.0.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/build.gradle"
+            line="4"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="Old buildToolsVersion; recommended version is 19.0.3 or later"
+        category="Correctness"
+        priority="4"
+        summary="Looks for old or obsolete Gradle library dependencies"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="  buildToolsVersion &apos;19.0.1&apos;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/build.gradle"
+            line="10"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="GradleOverrides"
+        severity="Warning"
+        message="This minSdkVersion value (4) is not used; it is always overridden by the value specified in the Gradle build script (8)"
+        category="Correctness"
+        priority="4"
+        summary="Looks for values specified in the manifest file which are overridden by values in Gradle"
+        explanation="The value of (for example) `minSdkVersion` is only used if it is not specified in the `build.gradle` build scripts. When specified in the Gradle build scripts, the manifest value is ignored and can be misleading, so should be removed to avoid ambiguity."
+        errorLine1="    &lt;uses-sdk android:minSdkVersion=&quot;4&quot; />"
+        errorLine2="              ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/AndroidManifest.xml"
+            line="8"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="AllowBackup"
+        severity="Warning"
+        message="Should explicitly set android:allowBackup to true or false (it&apos;s true by default, and that can have some security implications for the application&apos;s data)"
+        category="Security"
+        priority="3"
+        summary="Ensure that allowBackup is explicitly set in the application&apos;s manifest"
+        explanation="The allowBackup attribute determines if an application&apos;s data can be backed up and restored. It is documented at http://developer.android.com/reference/android/R.attr.html#allowBackup
+
+By default, this flag is set to `true`. When this flag is set to `true`, application data can be backed up and restored by the user using `adb backup` and `adb restore`.
+
+This may have security consequences for an application. `adb backup` allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. `adb restore` allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.
+
+Setting `allowBackup=&quot;false&quot;` opts an application out of both backup and restore.
+
+To fix this warning, decide whether your application should support backup, and explicitly set `android:allowBackup=(true|false)&quot;`"
+        url="http://developer.android.com/reference/android/R.attr.html#allowBackup"
+        urls="http://developer.android.com/reference/android/R.attr.html#allowBackup"
+        quickfix="adt">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/AndroidManifest.xml"/>
+    </issue>
+
+    <issue
+        id="FloatMath"
+        severity="Warning"
+        message="Use java.lang.Math#ceil instead of android.util.FloatMath#ceil() since it is faster as of API 8"
+        category="Performance"
+        priority="3"
+        summary="Suggests replacing `android.util.FloatMath` calls with `java.lang.Math`"
+        explanation="In older versions of Android, using `android.util.FloatMath` was recommended for performance reasons when operating on floats. However, on modern hardware doubles are just as fast as float (though they take more memory), and in recent versions of Android, `FloatMath` is actually slower than using `java.lang.Math` due to the way the JIT optimizes `java.lang.Math`. Therefore, you should use `Math` instead of `FloatMath` if you are only targeting Froyo and above."
+        url="http://developer.android.com/guide/practices/design/performance.html#avoidfloat"
+        urls="http://developer.android.com/guide/practices/design/performance.html#avoidfloat"
+        errorLine1="        return (int)FloatMath.ceil(result);"
+        errorLine2="                              ~~~~">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/src/com/viewpagerindicator/LinePageIndicator.java"
+            line="372"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="FloatMath"
+        severity="Warning"
+        message="Use java.lang.Math#ceil instead of android.util.FloatMath#ceil() since it is faster as of API 8"
+        category="Performance"
+        priority="3"
+        summary="Suggests replacing `android.util.FloatMath` calls with `java.lang.Math`"
+        explanation="In older versions of Android, using `android.util.FloatMath` was recommended for performance reasons when operating on floats. However, on modern hardware doubles are just as fast as float (though they take more memory), and in recent versions of Android, `FloatMath` is actually slower than using `java.lang.Math` due to the way the JIT optimizes `java.lang.Math`. Therefore, you should use `Math` instead of `FloatMath` if you are only targeting Froyo and above."
+        url="http://developer.android.com/guide/practices/design/performance.html#avoidfloat"
+        urls="http://developer.android.com/guide/practices/design/performance.html#avoidfloat"
+        errorLine1="        return (int)FloatMath.ceil(result);"
+        errorLine2="                              ~~~~">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/src/com/viewpagerindicator/LinePageIndicator.java"
+            line="398"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource R.color.vpi__bright_foreground_inverse_holo_dark appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Looks for unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;vpi__bright_foreground_inverse_holo_dark&quot;>@color/vpi__bright_foreground_holo_light&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/res/values/vpi__colors.xml"
+            line="24"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource R.color.vpi__bright_foreground_inverse_holo_light appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Looks for unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;vpi__bright_foreground_inverse_holo_light&quot;>@color/vpi__bright_foreground_holo_dark&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/res/values/vpi__colors.xml"
+            line="25"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource R.color.vpi__light_theme appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Looks for unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/res/color/vpi__light_theme.xml"/>
+    </issue>
+
+    <issue
+        id="ViewConstructor"
+        severity="Warning"
+        message="Custom view com/viewpagerindicator/IcsLinearLayout is missing constructor used by tools: (Context) or (Context,AttributeSet) or (Context,AttributeSet,int)"
+        category="Usability"
+        priority="3"
+        summary="Checks that custom views define the expected constructors"
+        explanation="Some layout tools (such as the Android layout editor for Studio &amp; Eclipse) needs to find a constructor with one of the following signatures:
+* `View(Context context)`
+* `View(Context context, AttributeSet attrs)`
+* `View(Context context, AttributeSet attrs, int defStyle)`
+
+If your custom view needs to perform initialization which does not apply when used in a layout editor, you can surround the given code with a check to see if `View#isInEditMode()` is false, since that method will return `false` at runtime but true within a user interface editor.">
+        <location
+            file="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/src/com/viewpagerindicator/IcsLinearLayout.java"/>
+    </issue>
+
+</issues>

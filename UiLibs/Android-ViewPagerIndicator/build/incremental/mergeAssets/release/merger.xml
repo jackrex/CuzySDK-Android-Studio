@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/src/main/assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/Volumes/MAC/Users/Jackrex/Documents/workspace/Cuzy/UiLibs/Android-ViewPagerIndicator/src/release/assets" />
+    </dataSet>
+
+</merger>

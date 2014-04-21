@@ -1,1 +1,3 @@
-include ':app'
+include ':app',':CacheFoundation', ':application',':library', ':cuzyandroid'
+include ':UiLibs:Android-ViewPagerIndicator'
+include ':UiLibs:XListView'
